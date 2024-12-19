@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	 <!-- <context:annotation-config/>  -->
+	<!-- This context annotation is not working so now we will use alternative of that  -->
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanProcessor"/>
+	
+	<!--   
+	<bean class="com.springcore.lifecycle.samosa" name="s1" init-method="hello" destroy-method="bye">
+	<property name="price" value="10"/>
+	</bean>
+	 -->
+	<bean class="com.springcore.lifecycle.pepsi" name="p1">
+	<property name="price" value="199"/>
+	</bean>
+	
+	
+	<bean class="com.springcore.lifecycle.Example" name="example">
+	<property name="subject" value="Maths"/>
+	</bean>
+	
+	</beans>

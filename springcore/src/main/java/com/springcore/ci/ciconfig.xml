@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="cer" class="com.springcore.ci.Certi">
+		<constructor-arg value="Android using java" />
+	</bean>
+
+	<!--
+	Using c schema
+	 <bean name="cer" class="com.springcore.ci.Certi" c:name="cheem chapak 
+		dam dam"/> -->
+
+
+
+	<bean name="person" class="com.springcore.ci.Person">
+		<!-- Here we are using constructor injection not setter injection so here 
+			we sill tag : <constructor-args> -->
+
+		<constructor-arg value="Kirmada" />
+		<constructor-arg value="12" />
+		<constructor-arg ref="cer" />
+
+		<!-- eclipse is intelligent it will understand which value should be passed 
+			to which parameter in constructor only when all parameter types are different, 
+			if we want to mention then we can add: type="parameter type" basically this 
+			removes ambiguity example: <constructor-arg value="Kirmada"/> <constructor-arg 
+			value="12" type ="int"/> -->
+
+	</bean>
+</beans>

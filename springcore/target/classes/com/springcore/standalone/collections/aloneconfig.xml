@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- we will create stand alone collection using util schema -->
+
+	<util:list list-class="java.util.LinkedList"
+		id="mybestfriends">
+		<value>Kajal</value>
+		<value>Ayush jha</value>
+		<value>Amisha</value>
+		<value>Aarav</value>
+		<value>Avinash</value>
+
+	</util:list>
+	<util:map map-class="java.util.HashMap" id="fees">
+	<entry key="spring framework" value="8000"/>
+	<entry key="Django framework" value="5000"/>
+	<entry key="hibernate framework" value="2000"/>
+	
+	</util:map>
+	
+	
+	<!-- here for Propeties we dont't have to pass the class here because it is already a class  -->
+	<util:properties id="dbconfig">
+	<prop key="driver">com.mysql.jdbc.driver</prop>
+	<prop key="username">aayush</prop>
+	<prop key="password">pass</prop>
+	</util:properties>
+
+
+	<!-- <bean class="com.springcore.standalone.collections.Person"
+		name="person1">
+		Here we are injecting standalone collection
+		<property name="friends" ref="mybestfriends" />
+		<property name="friends"> <ref bean="mybestfriends" /> </property>
+
+	</bean> -->
+
+	 <bean class="com.springcore.standalone.collections.Person"
+		name="person2">
+		<property name="friends" ref="mybestfriends"/>
+		<property name="feestructure" ref="fees"/>
+		<property name="properties" ref="dbconfig"/>
+		</bean> 
+
+
+
+
+
+
+
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
